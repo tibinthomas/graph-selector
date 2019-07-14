@@ -119,6 +119,41 @@
           }
         }
       }
+    },
+    "wc-graph-selector": {
+      "projectType": "library",
+      "root": "projects/wc-graph-selector",
+      "sourceRoot": "projects/wc-graph-selector/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/wc-graph-selector/tsconfig.lib.json",
+            "project": "projects/wc-graph-selector/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wc-graph-selector/src/test.ts",
+            "tsConfig": "projects/wc-graph-selector/tsconfig.spec.json",
+            "karmaConfig": "projects/wc-graph-selector/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wc-graph-selector/tsconfig.lib.json",
+              "projects/wc-graph-selector/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "graph-selector"
 }

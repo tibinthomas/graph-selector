@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "wc-graph-selector": [
+        "dist/wc-graph-selector"
+      ],
+      "wc-graph-selector/*": [
+        "dist/wc-graph-selector/*"
+      ]
+    }
   }
 }
