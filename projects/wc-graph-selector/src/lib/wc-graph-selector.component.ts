@@ -19,7 +19,7 @@ export class WcGraphSelectorComponent implements OnInit, AfterViewInit {
   private ctx: CanvasRenderingContext2D;
 
   y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-  x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  x = ['Zyxy', 'Mlkji', 'Fedcba', 'Abcef', 'Ghijk Lmno', 'Pqrst Uvw', 'Xyz', 'Helloo', 'Sweewt', 'Pslams', 'Xyz', 'Helloo', 'Sweewt', 'Pslams', 'Pslams'];
 
   spaceBetweenYaxisSegemnts;
   spaceBetweenXaxisSegemnts;
@@ -60,5 +60,19 @@ export class WcGraphSelectorComponent implements OnInit, AfterViewInit {
     }
 
     this.ctx.stroke();
+
+    /**
+     * Exp with text
+     */
+    this.ctx.font = "10px Arial";
+    this.ctx.save();
+    this.ctx.translate(this.spaceBetweenXaxisSegemnts, this.height / 2);
+    this.ctx.rotate(270 * Math.PI / 180);
+    for (let i = 0; i < this.x.length; i++) {
+      this.ctx.textAlign = 'center';
+      this.ctx.fillText(this.x[i], -30, i * this.spaceBetweenYaxisSegemnts);
+    }
+    this.ctx.restore();
+
   }
 }
